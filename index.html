@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html#home">後藤一里</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>  
+        <span class="contians">
+            <div class="contian info">
+                <div class="imgwall"> <img class="infoimg" src="hade.png" alt="大頭貼"></div>
+                <p color: azure> 後藤一里</p>
+                <p color: azure;> 結束樂團 : 吉他手</p>
+            </div>
+            <div class="contian mid">
+                <p>
+                    <div class="frame" id="home"><h1>首頁</h1></div>
+                    <iframe class="frame"  loading='lazy' id="F01" src="01.html" frameborder="0" ></iframe>
+                    <iframe class="frame"  loading='lazy' id="F02" src="02.html"  frameborder="0" ></iframe>
+                    <iframe class="frame"  loading='lazy' id="F03" src="03.html" frameborder="0" ></iframe>
+                </p>
+            </div>
+            <div class="contian rightbar">
+                <ul>
+                    <li class="contbox" id="T01" ><a href="#F01">青春コンプレックス</a></li>
+                    <li class="contbox" id="T02" ><a href="#F02">なにが悪い</a></li>
+                    <li class="contbox" id="T03" ><a href="#F03">Distortion!!</a></li>
+                </ul>
+            </div>
+        </span>
+    </body>
+</html>
+<style>
+    /* 幹你娘字的顏色 */
+    p{
+        color: azure;
+    }
+    /* 幹你娘背景拉 */
+    body{
+        background-image: url("./background.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    /* 到這裡 */
+    nav>ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #dddddd;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    nav>ul>li {
+        float: left;
+    }
+    a {
+        display: block;
+        padding: 8px;
+        background-color: #dddddd;
+    }
+    li a {
+        display: block;
+        color: #000;
+        padding: 15px 30px;
+        text-decoration: none;
+        text-align: center;
+        border-bottom: 1px solid #555;
+    }
+    li a:hover {
+        background-color: #555;
+        color: white;
+    }
+    .active {
+        background-color: #04aa6d;
+        color: white;
+    }
+    .contian {
+        margin-top: 70px;
+        padding: 20px;
+        display: block;
+    }
+    .mid {
+        margin-left: 200px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: gray;
+        border-bottom: none;
+        border-top: none;
+        min-height: 1000px;
+        min-width: 50%;
+    }
+    .contians {
+        display: flex;
+    }
+    .info {
+        border-style: solid;
+        border-width: 1px;
+        border-color: gray;
+        width: 150px;
+        position: fixed;
+    }
+    .infoimg {
+        
+        object-fit: cover;
+        width: 118%;
+        overflow: hidden;
+        position: absolute;
+        left: -7.5%;
+        top: -7.5%;
+        background-color: #cd0000;
+    }
+    .imgwall{
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+        border-radius:50%;
+        
+        background-color: #272727;
+    }
+    .contbox{
+        display: block;
+    }
+    .contbox:target{
+        background-color: #04aa6d;
+        color: white;
+    }
+    .rightbar{
+        min-width: 250px;
+        position: fixed;
+        right: 0;
+    }
+    iframe{
+        min-height: 1000px;
+        min-width: 100%;
+        border-style: solid;
+        border-width: 1px;
+        border-color: gray;
+    }
+    .frame{
+        display: none;
+    }
+    .frame:target{
+        padding-top: 50px; 
+        display:inline;
+        
+    }
+    
+
+</style>

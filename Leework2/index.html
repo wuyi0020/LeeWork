@@ -22,7 +22,9 @@
             </div>
             <div class="contian mid">
                 <p>
-                    <div class="frame" id="home"><h1>首頁</h1></div>
+                    <div class="frame" id="home"><h1>首頁</h1>
+                    <img class="first" src="hade.png" alt="">
+                    </div>
                     <iframe class="frame"  loading='lazy' id="F01" src="01.html" frameborder="0" ></iframe>
                     <iframe class="frame"  loading='lazy' id="F02" src="02.html"  frameborder="0" ></iframe>
                     <iframe class="frame"  loading='lazy' id="F03" src="03.html" frameborder="0" ></iframe>
@@ -30,26 +32,43 @@
             </div>
             <div class="contian rightbar">
                 <ul>
-                    <li class="contbox" id="T01" ><a href="#F01">青春コンプレックス</a></li>
-                    <li class="contbox" id="T02" ><a href="#F02">なにが悪い</a></li>
-                    <li class="contbox" id="T03" ><a href="#F03">Distortion!!</a></li>
+                    <li class="contbox"><a href="#F01">青春コンプレックス</a></li>
+                    <li class="contbox"><a href="#F02">なにが悪い</a></li>
+                    <li class="contbox"><a href="#F03">Distortion!!</a></li>
                 </ul>
             </div>
         </span>
+        
     </body>
 </html>
 <style>
+    .first{
+        animation-name: image;
+        animation-duration: 1s;
+        position: relative;
+    }
+    @keyframes image{
+    0%{
+    transform: translateY(40%);
+    }
+    100%{
+    transform: translateY(0%);
+    }
+}
     /* 字的顏色 */
     p{
         color: azure;
     }
     /* 背景 */
-    body{
+    /* body{
         background-image: url("./background.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
-    }
+    } */
     /* 到這裡 */
+    body{
+        background-color: #000;
+    }
     nav>ul {
         list-style-type: none;
         margin: 0;
@@ -63,6 +82,9 @@
     nav>ul>li {
         float: left;
     }
+    .contbox>a{
+        border-bottom: 1px solid #555;
+    }
     a {
         display: block;
         padding: 8px;
@@ -74,7 +96,7 @@
         padding: 15px 30px;
         text-decoration: none;
         text-align: center;
-        border-bottom: 1px solid #555;
+        
     }
     li a:hover {
         background-color: #555;
@@ -110,14 +132,10 @@
         position: fixed;
     }
     .infoimg {
-        
-        object-fit: cover;
         width: 118%;
-        overflow: hidden;
         position: absolute;
         left: -7.5%;
         top: -7.5%;
-        background-color: #cd0000;
     }
     .imgwall{
         width: 150px;
@@ -125,15 +143,10 @@
         overflow: hidden;
         position: relative;
         border-radius:50%;
-        
-        background-color: #272727;
     }
+    
     .contbox{
         display: block;
-    }
-    .contbox:target{
-        background-color: #04aa6d;
-        color: white;
     }
     .rightbar{
         min-width: 250px;
@@ -151,10 +164,25 @@
         display: none;
     }
     .frame:target{
-        padding-top: 50px; 
+        padding-top: 100px; 
+        margin-top: -100px;
         display:inline;
-        
     }
     
 
 </style>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<script>
+    let dones = document.querySelectorAll(".contbox");
+    let audiodone;
+    function playtaudio() {
+        audiodone=new Audio("small_drum1.mp3"); 
+        audiodone.play();
+    }
+    dones.forEach(function(done){
+        console.log(done);
+        done.addEventListener('click',playtaudio);
+    }
+    );    
+</script>

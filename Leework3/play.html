@@ -139,7 +139,7 @@
     ];
     stopbut.empty();
     stopbut.append(playimg);
-    audioplay.src = playlog;
+    audioplay.src = "./player/"+playlog;
     $('#volumeSlider').attr('value', volume);
     audioplay.volume = volume;
     $('#volumeSlider').change(function () {
@@ -166,7 +166,7 @@
             playindexlog = 0;
         }
         playlog = playlist[playindexlog];
-        audioplay.src = playlog;
+        audioplay.src = "./player/"+playlog;
         audioplay.play();
         crlt.children('.sname').empty();
 
@@ -178,7 +178,7 @@
             playindexlog = 13;
         }
         playlog = playlist[playindexlog];
-        audioplay.src = playlog;
+        audioplay.src = "./player/"+playlog;
         audioplay.play();
         crlt.children('.sname').empty();
 
@@ -212,7 +212,7 @@
         $('.stopbut').append(pauseimg);
         playlog = playlist[$(this).index()];
         playindexlog = $(this).index();
-        audioplay.src = playlog;
+        audioplay.src = "./player/"+playlog;
         audioplay.load();
         audioplay.play();
     });

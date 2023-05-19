@@ -193,7 +193,7 @@ ol li span:not(:last-child) {
   }
 }
 li:hover{
-    background-color: #faa700;
+    background-color: var(--color);
     cursor: pointer;
 }
 ol li span:first-child {
